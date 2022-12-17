@@ -29,7 +29,9 @@ INSERT INTO species (name) VALUES ('Pokemon'),('Digimon');
 /*Modify your inserted animals so it includes the species_id value*/
 
 UPDATE animals SET species_id = 1 WHERE name LIKE '%mon';
-UPDATE animals SET species_id = 2 WHERE name NOT LIKE '%mon';
+UPDATE animals
+   SET species_id = (SELECT id from species WHERE name = 'Pokemon')
+   WHERE species_id IS NULL;
 
 /*Modify your inserted animals to include owner information (owner_id)*/
 

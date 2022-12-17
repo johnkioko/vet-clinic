@@ -53,11 +53,11 @@ SELECT species, AVG(escape_attempts) FROM animals WHERE date_of_birth BETWEEN '1
 
 /* Day 3 */
 
-SELECT name FROM animals
+SELECT *FROM animals
 JOIN owners ON owners.id = animals.owner_id
 WHERE owners.full_name = 'Melody Pond';
 
-SELECT animals.name FROM animals
+SELECT * FROM animals
 JOIN species ON species.id = animals.species_id
 WHERE species.name = 'Pokemon';
 
